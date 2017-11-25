@@ -1,23 +1,41 @@
 package odev;
 
 import com.sun.org.apache.bcel.internal.generic.GOTO;
+
 import static com.sun.org.apache.xpath.internal.axes.HasPositionalPredChecker.check;
+
 import static java.awt.SystemColor.text;
+
 import java.io.BufferedReader;
+
 import java.io.File;
+
 import java.io.FileNotFoundException;
+
 import java.io.FileReader;
+
 import java.io.IOException;
+
 import java.io.Reader;
+
 import static java.lang.Math.pow;
+
 import java.nio.charset.Charset;
+
 import java.util.ArrayList;
+
 import java.util.Arrays;
+
 import java.util.Locale;
+
 import java.util.Scanner;
+
 import java.util.logging.Level;
+
 import java.util.logging.Logger;
+
 import static jdk.nashorn.internal.runtime.regexp.joni.encoding.CharacterType.ASCII;
+
 import static sun.nio.ch.IOStatus.check;
 
 
@@ -26,6 +44,7 @@ public class Odev {
     
     
     public static String[] readText(String file){
+        
         //Dizi olustur ve elemanlari ona aktar
         String[] Words = new String[100];
         try{
@@ -50,9 +69,11 @@ public class Odev {
   
     }
     
-    public static int toASCII(String str) {           //String to ASCII
+    public static int toASCII(String str) {           
+                                                            //String to ASCII
 
-        char[] ch=str.toCharArray();            //String to Char array harfleri tek tek almak için
+        char[] ch=str.toCharArray();           
+        //String to Char array harfleri tek tek almak için
         int ascii=0;
         int last=0;
         for(int k =0; k<ch.length; k++){        
@@ -61,7 +82,8 @@ public class Odev {
         }    
         return last;
 }
-     public static int toASCII(char[] str) {           //String to ASCII 2.method       pow(k+1,4)
+     public static int toASCII(char[] str) {           
+     //String to ASCII 2.method       pow(k+1,4)
             
         int ascii=0;
         int last=0;
@@ -72,8 +94,9 @@ public class Odev {
         return last;
 }
      
-    public static void Nbul(int words,String GKelime){              //Arama fonksiyonu bunun gibi 2 tane daha fonk olcak 
-        int Ascii=toASCII(GKelime);                             //Dogru calisiyo
+    public static void Nbul(int words,String GKelime){             
+    
+        int Ascii=toASCII(GKelime);                            
         int net=0;
 
             if(words==Ascii)
@@ -84,9 +107,11 @@ public class Odev {
         }
     }
     
-    public static void CikarAra(int words,String GKelime){              //Harf cikararak arama            Sikinti var
-                                                                            //Fonksiyonlar bastan yazilacak
-            String bulunan = new String();
+    public static void CikarAra(int words,String GKelime){              
+    //Harf cikararak arama
+    //Fonksiyonlar bastan yazilacak
+           
+           String bulunan = new String();
             int k=0;
             int Ascii;
             char[] temp = null;
